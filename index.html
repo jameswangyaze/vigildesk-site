@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VigilDesk — After-hours AI receptionist for home services</title>
+<meta name="description" content="VigilDesk answers your phone after hours, books appointments, and texts customers from your business number. Built for HVAC, plumbing, electrical, and roofing pros." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50:  '#fff8f1',
+            100: '#feecdc',
+            200: '#fcd9bd',
+            300: '#fdba8c',
+            400: '#ff8a4c',
+            500: '#ff5a1f',
+            600: '#d03801',
+            700: '#b43403',
+            800: '#8a2c0d',
+            900: '#73230d',
+          },
+        },
+        fontFamily: {
+          sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="bg-brand-50 text-slate-900 antialiased">
+
+<!-- Header -->
+<header class="border-b border-brand-100 bg-white/80 backdrop-blur sticky top-0 z-10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <span class="inline-block w-8 h-8 rounded-lg bg-brand-500 text-white text-center leading-8 font-bold">V</span>
+      <span class="font-semibold text-lg tracking-tight">VigilDesk</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+      <a href="#how-it-works" class="hover:text-brand-600">How it works</a>
+      <a href="#pricing" class="hover:text-brand-600">Pricing</a>
+      <a href="#faq" class="hover:text-brand-600">FAQ</a>
+      <a href="mailto:hello@vigildesk.ai" class="hover:text-brand-600">Contact</a>
+    </nav>
+    <a href="tel:+18447313674" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition">
+      Call (844) 731-3674
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="inline-block bg-brand-100 text-brand-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">For HVAC, plumbing, electrical &amp; roofing</span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+        After-hours AI receptionist for home services.
+      </h1>
+      <p class="mt-6 text-lg text-slate-700 leading-relaxed">
+        Stop losing jobs to voicemail. VigilDesk answers your business phone 24/7, qualifies the lead, books the appointment on your calendar, and texts the customer a confirmation — from <strong>your own business number</strong>.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+18447313674" class="inline-flex justify-center items-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+          Try the demo: (844) 731-3674
+        </a>
+        <a href="mailto:hello@vigildesk.ai?subject=VigilDesk%20pilot%20interest" class="inline-flex justify-center items-center bg-white hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-lg border border-slate-300 transition">
+          Email hello@vigildesk.ai
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-slate-500">3-job guarantee — if we don't book you 3 jobs in 30 days, you don't pay.</p>
+    </div>
+
+    <!-- Right column: phone illustration / SMS preview -->
+    <div class="lg:justify-self-end">
+      <div class="bg-white rounded-2xl shadow-xl border border-brand-100 p-6 max-w-sm mx-auto">
+        <div class="flex items-center gap-3 pb-4 border-b border-slate-100">
+          <span class="inline-block w-10 h-10 rounded-full bg-brand-500 text-white text-center leading-10 font-bold">M</span>
+          <div>
+            <p class="font-semibold text-slate-900 text-sm">Mike's Plumbing</p>
+            <p class="text-xs text-slate-500">(844) 555-PIPE</p>
+          </div>
+        </div>
+        <div class="mt-4 space-y-3">
+          <div class="bg-slate-100 text-slate-800 rounded-lg rounded-tl-sm p-3 text-sm max-w-[85%]">
+            Hi Sarah, your appointment with Mike's Plumbing is confirmed for Tue Apr 28 at 9:00 AM. Address: 1234 Main St. Reply STOP to opt out.
+          </div>
+          <div class="bg-brand-500 text-white rounded-lg rounded-tr-sm p-3 text-sm max-w-[85%] ml-auto">
+            Perfect, see you then!
+          </div>
+          <div class="bg-slate-100 text-slate-800 rounded-lg rounded-tl-sm p-3 text-sm max-w-[85%]">
+            Great — Mike will text 30 min before arrival.
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-slate-400 text-center">Sent from your business number, not a generic shortcode.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="bg-white border-y border-brand-100">
+  <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 text-center">
+    <div>
+      <p class="text-3xl font-bold text-brand-600">24/7</p>
+      <p class="mt-1 text-sm text-slate-600">Answers every call, day or night</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-brand-600">&lt; 60s</p>
+      <p class="mt-1 text-sm text-slate-600">Average call-to-booking time</p>
+    </div>
+    <div>
+      <p class="text-3xl font-bold text-brand-600">$0</p>
+      <p class="mt-1 text-sm text-slate-600">Until we book you 3 real jobs</p>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how-it-works" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="max-w-2xl">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">How VigilDesk works</h2>
+    <p class="mt-4 text-lg text-slate-700">Set it up once. We handle the rest. You keep your phone number, your calendar, and your customer relationships.</p>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-3 gap-8">
+    <div class="bg-white rounded-xl border border-brand-100 p-6 shadow-sm">
+      <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-brand-100 text-brand-700 font-bold">1</span>
+      <h3 class="mt-4 font-semibold text-lg">Forward your business line</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">After hours, weekends, or whenever you choose, calls forward to our AI receptionist. Caller hears a friendly greeting in your business name.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6 shadow-sm">
+      <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-brand-100 text-brand-700 font-bold">2</span>
+      <h3 class="mt-4 font-semibold text-lg">AI takes the booking</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">VigilDesk asks the right questions, qualifies urgency, books an appointment slot on your Google Calendar, and confirms with the caller by SMS.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6 shadow-sm">
+      <span class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-brand-100 text-brand-700 font-bold">3</span>
+      <h3 class="mt-4 font-semibold text-lg">You get a heads-up text</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Wake up to a clean list of new appointments — name, address, job type, urgency. No transcripts to read, no voicemails to chase down.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="bg-white border-y border-brand-100">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Simple pricing. No setup fees.</h2>
+      <p class="mt-4 text-lg text-slate-700">Pick the coverage you need. Cancel anytime. Includes everything — calls, SMS, calendar booking, your business number.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-6 max-w-4xl">
+      <div class="rounded-2xl border border-brand-200 p-8 bg-brand-50">
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-700">Nights &amp; Weekends</p>
+        <p class="mt-3"><span class="text-4xl font-bold">$499</span><span class="text-slate-600">/month</span></p>
+        <p class="mt-2 text-sm text-slate-600">Coverage 6pm–7am weekdays + all day Sat/Sun</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-800">
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Unlimited after-hours calls</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Booking on your Google Calendar</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> SMS confirmations from your business number</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Daily morning briefing text</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> 3-job guarantee in first 30 days</li>
+        </ul>
+        <a href="mailto:hello@vigildesk.ai?subject=Pilot%20interest%20%E2%80%94%20Nights%20%26%20Weekends" class="mt-8 block text-center bg-white hover:bg-slate-50 text-brand-700 font-semibold py-3 rounded-lg border border-brand-300 transition">Start a pilot</a>
+      </div>
+
+      <div class="rounded-2xl border-2 border-brand-500 p-8 bg-white shadow-md relative">
+        <span class="absolute -top-3 left-8 bg-brand-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">Most popular</span>
+        <p class="text-sm font-semibold uppercase tracking-wider text-brand-700">24/7 Coverage</p>
+        <p class="mt-3"><span class="text-4xl font-bold">$999</span><span class="text-slate-600">/month</span></p>
+        <p class="mt-2 text-sm text-slate-600">Round-the-clock answering, every call, every day</p>
+        <ul class="mt-6 space-y-3 text-sm text-slate-800">
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Everything in Nights &amp; Weekends</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Daytime overflow + lunch coverage</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Hot-lead alerts (instant SMS to owner)</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Missed-call recovery texts</li>
+          <li class="flex gap-2"><span class="text-brand-600 font-bold">✓</span> Priority onboarding (in-person setup)</li>
+        </ul>
+        <a href="mailto:hello@vigildesk.ai?subject=Pilot%20interest%20%E2%80%94%2024%2F7" class="mt-8 block text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg transition">Start a pilot</a>
+      </div>
+    </div>
+
+    <p class="mt-8 text-sm text-slate-500 max-w-3xl">Both plans include unlimited inbound calls, SMS confirmations, calendar bookings, and US-based support. Standard message and data rates may apply for SMS. <a href="/sms-terms.html" class="underline hover:text-brand-600">SMS terms</a>.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="max-w-4xl mx-auto px-6 py-20">
+  <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Common questions</h2>
+  <div class="mt-10 space-y-6">
+    <div class="bg-white rounded-xl border border-brand-100 p-6">
+      <h3 class="font-semibold text-lg">Will customers know it's an AI?</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Yes — every call opens with a clear AI disclosure ("This is an AI-powered assistant for [Business Name]..."). It's required for TCPA compliance and customers actually appreciate the honesty.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6">
+      <h3 class="font-semibold text-lg">Do I have to change my phone number?</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">No. Calls forward from your existing business line. SMS replies and confirmations also come <em>from your business number</em> — not a random platform shortcode like our competitors.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6">
+      <h3 class="font-semibold text-lg">What if the AI gets confused?</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">If a caller asks something off-script, the AI either takes a callback message or transfers to your designated emergency line. We monitor every call and you get a daily report of anything flagged.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6">
+      <h3 class="font-semibold text-lg">Are calls recorded?</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Yes, with consent disclosed at the start of each call (per California Penal Code 632). Recordings are kept for 90 days for quality and dispute purposes, then auto-deleted. Full details in our <a href="/privacy.html" class="underline hover:text-brand-600">Privacy Policy</a>.</p>
+    </div>
+    <div class="bg-white rounded-xl border border-brand-100 p-6">
+      <h3 class="font-semibold text-lg">How does the 3-job guarantee work?</h3>
+      <p class="mt-2 text-slate-700 text-sm leading-relaxed">If VigilDesk doesn't book you at least 3 paying jobs in your first 30 days, your first month is free. Period. No fine print.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="bg-brand-500">
+  <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Stop losing jobs to voicemail.</h2>
+    <p class="mt-4 text-lg text-brand-50">Call our demo line and have an AI receptionist take your "appointment" right now. Hear it before you buy it.</p>
+    <a href="tel:+18447313674" class="mt-8 inline-flex items-center gap-2 bg-white hover:bg-brand-50 text-brand-700 font-semibold px-6 py-3 rounded-lg shadow transition">
+      Call (844) 731-3674
+    </a>
+    <p class="mt-4 text-sm text-brand-100">Or email <a href="mailto:hello@vigildesk.ai" class="underline">hello@vigildesk.ai</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-8 text-sm">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-8 h-8 rounded-lg bg-brand-500 text-white text-center leading-8 font-bold">V</span>
+        <span class="font-semibold text-white text-lg">VigilDesk</span>
+      </div>
+      <p class="mt-4 text-slate-400 max-w-sm">After-hours AI receptionist built for home services pros. We answer your calls, book your jobs, and text your customers — from your own business number.</p>
+      <p class="mt-6 text-slate-400 text-xs leading-relaxed">
+        VigilDesk LLC<br />
+        1098 Foxhurst Way, San Jose, CA 95120<br />
+        EIN 42-2141174 · CA File No. B20260186803
+      </p>
+    </div>
+    <div>
+      <p class="font-semibold text-white">Company</p>
+      <ul class="mt-3 space-y-2">
+        <li><a href="#how-it-works" class="hover:text-white">How it works</a></li>
+        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+        <li><a href="mailto:hello@vigildesk.ai" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-white">Legal</p>
+      <ul class="mt-3 space-y-2">
+        <li><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="/sms-terms.html" class="hover:text-white">SMS Terms</a></li>
+        <li><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>&copy; 2026 VigilDesk LLC. All rights reserved.</p>
+      <p>Built in San Jose, California.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
