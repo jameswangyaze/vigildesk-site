@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+# Verification documents in /docs/ contain regulatory filings shared
+# with carrier-compliance reviewers. They are intentionally not indexed.
