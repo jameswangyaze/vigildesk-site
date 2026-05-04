@@ -154,15 +154,24 @@ In Cloudflare DNS for zone `vigildesk.ai`:
 
 ## Email (`hello@vigildesk.ai`)
 
-Currently **not yet configured.** Site advertises this address but emails will bounce.
+**Live as of 2026-05-03.** Configured as a Google Workspace alias on the
+`admin@vigildesk.ai` mailbox (VigilDesk LLC Mail). Inbound test message
+delivered successfully 2026-05-03 22:45 PDT.
 
-To set up:
-1. Cloudflare dashboard → `vigildesk.ai` zone → **Email** → **Email Routing**
-2. Enable Email Routing → Cloudflare adds MX + SPF records automatically
-3. Add destination address: `jameswangyaze@gmail.com` (verify via the email Cloudflare sends)
-4. Add custom address rule: `hello@vigildesk.ai` → forward to `jameswangyaze@gmail.com`
+### How it's wired
+- Google Workspace Business Starter ($7/mo) — see memory `reference_vigildesk_google_workspace.md`
+- Primary mailbox: `admin@vigildesk.ai`
+- `hello@vigildesk.ai` is one of 6 aliases pointing to that mailbox (others: `james@`, `contact@`, `support@`, `sales@`, `billing@`)
+- DNS auth: SPF + DKIM live in Cloudflare; DMARC intentionally skipped at current volume
 
-Free, ~5 min, no ongoing cost.
+### Verifying the mailbox is still live
+```bash
+~/.openclaw/scripts/send-summary-email.py \
+  --subject "[OpenClaw/Test] hello@vigildesk.ai check $(date '+%Y-%m-%d')" \
+  --to "hello@vigildesk.ai" \
+  --body "Routing check"
+```
+Then confirm arrival in `admin@vigildesk.ai` inbox within ~30 seconds.
 
 ---
 
