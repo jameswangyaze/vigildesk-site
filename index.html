@@ -73,10 +73,10 @@
     <div>
       <span class="inline-block bg-brand-100 text-brand-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">For HVAC contractors in California</span>
       <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-        After-hours AI receptionist for HVAC.
+        Speed-to-Lead protection for HVAC.
       </h1>
       <p class="mt-6 text-lg text-slate-700 leading-relaxed">
-        Stop losing jobs to voicemail. VigilDesk answers your business phone 24/7, qualifies the lead, books the appointment on your calendar, and texts the customer a confirmation — from <strong>your own business number</strong>.
+        Every missed Google LSA call costs you ~$75 and tanks your morning peak ranking. VigilDesk answers in <strong>under 15 seconds</strong>, qualifies the lead, books the appointment, and texts the customer — from <strong>your own business number</strong>. Protects your Google Verified score 24/7.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3">
         <a href="tel:+18447313674" class="inline-flex justify-center items-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
@@ -224,26 +224,29 @@
     monthlyMissed.textContent = fmt(monthly);
     monthlyBurn.textContent = fmt(burn);
 
-    let plan, planCost;
-    if (burn < 499) {
-      plan = '$499 — Smart Hours';
-      planCost = 499;
-    } else if (burn < 999) {
-      plan = '$499 — Smart Hours';
-      planCost = 499;
-    } else if (burn < 1499) {
-      plan = '$999 — 24/7 Coverage';
-      planCost = 999;
-    } else {
-      plan = '$1,499 — Pro Number';
-      planCost = 1499;
+    // Pick the tier with the highest net savings (not first positive).
+    // Coverage assumptions:
+    //   Smart Hours $499 = nights/weekends only — ~50% of typical misses.
+    //   24/7 Coverage $999 = full coverage — ~90%.
+    //   Pro Number $1,499 = full coverage + premium UX (no-ring + family whitelist) — ~95%.
+    // Crossover: $1,499 only beats $999 when burn > ~$10K/mo.
+    const tiers = [
+      { name: '$499 — Smart Hours', cost: 499, coverage: 0.5 },
+      { name: '$999 — 24/7 Coverage', cost: 999, coverage: 0.9 },
+      { name: '$1,499 — Pro Number', cost: 1499, coverage: 0.95 }
+    ];
+    let best = null;
+    for (const t of tiers) {
+      const saved = burn * t.coverage - t.cost;
+      if (saved > 0 && (!best || saved > best.saved)) {
+        best = { ...t, saved: Math.round(saved) };
+      }
     }
-
-    recPlan.textContent = plan;
-    const savings = burn - planCost;
-    if (savings > 0) {
-      recSavings.textContent = 'You save ~$' + fmt(savings) + '/mo';
+    if (best) {
+      recPlan.textContent = best.name;
+      recSavings.textContent = 'You save ~$' + fmt(best.saved) + '/mo';
     } else {
+      recPlan.textContent = '$499 — Smart Hours';
       recSavings.textContent = 'Pilot first — math doesn\u2019t pencil yet';
     }
   }
