@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VigilDesk — After-hours AI receptionist for HVAC contractors</title>
-<meta name="description" content="VigilDesk answers your phone after hours, books appointments, and texts customers from your business number. Built for HVAC contractors in California who lose jobs to voicemail." />
+<title>VigilDesk — Speed-to-Lead protection for HVAC LSA contractors</title>
+<meta name="description" content="Every missed Google LSA call costs you ~$75 and tanks your morning peak-hour ranking. VigilDesk answers in under 15 seconds, books the job, protects your Google Verified score. Built for HVAC contractors in California." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%94%3C/text%3E%3C/svg%3E" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -53,6 +53,19 @@
     </a>
   </div>
 </header>
+
+<!-- LSA banner -->
+<div class="bg-slate-900 text-white text-sm">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <p>
+      <span class="font-semibold text-brand-300">Run Google LSA?</span>
+      <span class="text-slate-200">Each missed call = ~$75 fee + 90-day ranking suppression.</span>
+    </p>
+    <a href="#lsa-calculator" class="inline-flex items-center gap-1 font-semibold text-brand-300 hover:text-brand-200">
+      See your math &rarr;
+    </a>
+  </div>
+</div>
 
 <!-- Hero -->
 <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 lg:pt-24 lg:pb-28">
@@ -120,6 +133,126 @@
     </div>
   </div>
 </section>
+
+<!-- LSA calculator -->
+<section id="lsa-calculator" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="max-w-3xl">
+    <span class="inline-block bg-brand-100 text-brand-800 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">For Google LSA contractors</span>
+    <h2 class="mt-5 text-3xl sm:text-4xl font-bold tracking-tight">Stop paying Google for missed leads.</h2>
+    <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+      Google's 2026 LSA bills you the full lead fee (~$75) when a call rings 30 seconds without an answer — even if the caller hangs up. Miss 3+ calls a week and your morning peak-hour ranking gets suppressed for up to <strong>90 days</strong>.
+    </p>
+    <p class="mt-3 text-lg text-slate-700 leading-relaxed">
+      VigilDesk picks up in under 15 seconds, qualifies the lead, books the job into your CRM, and protects your Google Verified score.
+    </p>
+  </div>
+
+  <div class="mt-10 bg-white rounded-2xl shadow-lg border border-brand-100 p-6 sm:p-10">
+    <h3 class="text-xl font-bold tracking-tight">Calculate your monthly LSA bleed</h3>
+    <p class="mt-1 text-sm text-slate-500">Move the sliders. Math updates live.</p>
+
+    <div class="mt-8 grid sm:grid-cols-2 gap-8">
+      <div>
+        <label for="cpl" class="block text-sm font-semibold text-slate-700">Your average LSA cost per lead</label>
+        <div class="mt-2 flex items-center gap-3">
+          <input id="cpl" type="range" min="25" max="120" step="5" value="75" class="flex-1 accent-brand-500" />
+          <span class="font-mono text-lg font-bold text-brand-600 w-16 text-right" id="cpl-display">$75</span>
+        </div>
+        <p class="mt-1 text-xs text-slate-500">National avg $51-55. SF Bay Area $65-95+.</p>
+      </div>
+
+      <div>
+        <label for="missed" class="block text-sm font-semibold text-slate-700">Calls you miss per week</label>
+        <div class="mt-2 flex items-center gap-3">
+          <input id="missed" type="range" min="0" max="30" step="1" value="5" class="flex-1 accent-brand-500" />
+          <span class="font-mono text-lg font-bold text-brand-600 w-16 text-right" id="missed-display">5</span>
+        </div>
+        <p class="mt-1 text-xs text-slate-500">Includes after-hours, lunch, on-the-job, second-line ringing.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+      <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Monthly missed leads</p>
+        <p class="mt-2 text-3xl font-bold text-slate-900" id="monthly-missed">22</p>
+      </div>
+      <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+        <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Burned on LSA fees</p>
+        <p class="mt-2 text-3xl font-bold text-slate-900">$<span id="monthly-burn">1,650</span></p>
+      </div>
+      <div class="bg-brand-500 text-white rounded-xl p-5 border border-brand-600 shadow">
+        <p class="text-xs uppercase tracking-wider font-semibold opacity-90">Recommended VigilDesk plan</p>
+        <p class="mt-2 text-2xl font-bold" id="rec-plan">$999 — 24/7 Coverage</p>
+        <p class="mt-1 text-sm opacity-90" id="rec-savings">You save ~$651/mo</p>
+      </div>
+    </div>
+
+    <p class="mt-6 text-xs text-slate-500">Math assumes 4.33 weeks/month. Excludes the 90-day morning peak-hour ranking suppression cost (which is harder to quantify but typically larger than the per-lead fees).</p>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <a href="tel:+18447313674" class="inline-flex justify-center items-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+        Call (844) 731-3674 to start your pilot
+      </a>
+      <a href="mailto:hello@vigildesk.ai?subject=LSA%20pilot%20interest" class="inline-flex justify-center items-center bg-white hover:bg-slate-50 text-slate-900 font-semibold px-6 py-3 rounded-lg border border-slate-300 transition">
+        Email hello@vigildesk.ai
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const cpl = document.getElementById('cpl');
+  const missed = document.getElementById('missed');
+  const cplDisplay = document.getElementById('cpl-display');
+  const missedDisplay = document.getElementById('missed-display');
+  const monthlyMissed = document.getElementById('monthly-missed');
+  const monthlyBurn = document.getElementById('monthly-burn');
+  const recPlan = document.getElementById('rec-plan');
+  const recSavings = document.getElementById('rec-savings');
+
+  function fmt(n) { return n.toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+
+  function update() {
+    const cplVal = parseInt(cpl.value, 10);
+    const missedVal = parseInt(missed.value, 10);
+    const monthly = Math.round(missedVal * 4.33);
+    const burn = Math.round(monthly * cplVal);
+
+    cplDisplay.textContent = '$' + cplVal;
+    missedDisplay.textContent = missedVal;
+    monthlyMissed.textContent = fmt(monthly);
+    monthlyBurn.textContent = fmt(burn);
+
+    let plan, planCost;
+    if (burn < 499) {
+      plan = '$499 — Smart Hours';
+      planCost = 499;
+    } else if (burn < 999) {
+      plan = '$499 — Smart Hours';
+      planCost = 499;
+    } else if (burn < 1499) {
+      plan = '$999 — 24/7 Coverage';
+      planCost = 999;
+    } else {
+      plan = '$1,499 — Pro Number';
+      planCost = 1499;
+    }
+
+    recPlan.textContent = plan;
+    const savings = burn - planCost;
+    if (savings > 0) {
+      recSavings.textContent = 'You save ~$' + fmt(savings) + '/mo';
+    } else {
+      recSavings.textContent = 'Pilot first — math doesn\u2019t pencil yet';
+    }
+  }
+
+  cpl.addEventListener('input', update);
+  missed.addEventListener('input', update);
+  update();
+})();
+</script>
 
 <!-- How it works -->
 <section id="how-it-works" class="max-w-6xl mx-auto px-6 py-20">
